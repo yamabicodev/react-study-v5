@@ -1,3 +1,3 @@
 # react-study-v5
 
-- React Router
+- React Router Sample App
