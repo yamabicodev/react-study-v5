@@ -4,6 +4,7 @@ import { Contact } from "../components/Contact";
 import { Switch, Route } from "react-router-dom";
 import { SampleRoutes } from "./SampleRoutes";
 import { InformationRoutes } from "./InformationRoutes";
+import { NotFound } from "../components/NotFound";
 
 // Switch：コンポネントレンダリングの出し分けを行う。
 // Route どのパスの場合にどのコンポネントを表示するか判断するためのもの
@@ -27,7 +28,6 @@ export const Router = () => {
         path="/samples"
         render={({ match: { url } }) => (
           <Switch>
-            {console.log(url)}
             {SampleRoutes.map((route) => (
               <Route
                 key={route.path}
@@ -44,7 +44,6 @@ export const Router = () => {
         path="/information"
         render={({ match: { url } }) => (
           <Switch>
-            {console.log(url)}
             {InformationRoutes.map((route) => (
               <Route
                 key={route.path}
@@ -59,6 +58,9 @@ export const Router = () => {
       />
       <Route path="/contact">
         <Contact />
+      </Route>
+      <Route path="*">
+        <NotFound />
       </Route>
     </Switch>
   );

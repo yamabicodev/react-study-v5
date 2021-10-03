@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { UrlParameter } from "./UrlParameter";
 
 export const Information = () => {
   return (
@@ -7,13 +6,10 @@ export const Information = () => {
       <h1>Information</h1>
       <ul>
         <li>
-          <Link to="/information/1">info detail1</Link>
+          <Link to="/information/1">info detail1(url param)</Link>
         </li>
         <li>
-          <Link to="/information/2">info detail2</Link>
-        </li>
-        <li>
-          <Link to="/information/3">info detail3</Link>
+          <Link to="/information/2?name=test">info detail2(query param)</Link>
         </li>
       </ul>
     </div>
