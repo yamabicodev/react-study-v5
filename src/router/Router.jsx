@@ -1,11 +1,10 @@
 import { Home } from "../components/Home";
 import { About } from "../components/About";
-import { Samples } from "../components/Samples";
-import { SampleDetail1 } from "../components/SampleDetail1";
-import { SampleDetail2 } from "../components/SampleDetail2";
 import { Contact } from "../components/Contact";
 import { Switch, Route } from "react-router-dom";
 import { SampleRoutes } from "./SampleRoutes";
+import { InformationRoutes } from "./InformationRoutes";
+
 // Switch：コンポネントレンダリングの出し分けを行う。
 // Route どのパスの場合にどのコンポネントを表示するか判断するためのもの
 // Routeでexactを指定するとパスの完全一致の場合、対象と判断されるようになる。
@@ -30,6 +29,23 @@ export const Router = () => {
           <Switch>
             {console.log(url)}
             {SampleRoutes.map((route) => (
+              <Route
+                key={route.path}
+                exact={route.exact}
+                path={`${url}${route.path}`}
+              >
+                {route.childlen}
+              </Route>
+            ))}
+          </Switch>
+        )}
+      />
+      <Route
+        path="/information"
+        render={({ match: { url } }) => (
+          <Switch>
+            {console.log(url)}
+            {InformationRoutes.map((route) => (
               <Route
                 key={route.path}
                 exact={route.exact}

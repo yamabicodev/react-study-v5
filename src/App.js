@@ -15,6 +15,8 @@ export default function App() {
           <br />
           <Link to="/samples">Samples</Link>
           <br />
+          <Link to="/information">Information</Link>
+          <br />
           <Link to="/contact">Contact</Link>
         </div>
       </div>
